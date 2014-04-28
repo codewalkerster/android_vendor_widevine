@@ -1,7 +1,6 @@
 LOCAL_PATH:= $(call my-dir)
 include $(TOP)/vendor/widevine/oemcryptolevel.mk
 ifeq ($(TARGET_ARCH),arm)
-ifeq ($(LOCAL_OEMCRYPTO_LEVEL),3)
 
 #####################################################################
 # libdrmdecrypt.so
@@ -15,6 +14,5 @@ LOCAL_STRIP_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_PREBUILT)
-endif
 endif
 
