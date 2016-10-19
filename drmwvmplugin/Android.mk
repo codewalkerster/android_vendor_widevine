@@ -1,6 +1,6 @@
 LOCAL_PATH:= $(call my-dir)
 
-ifeq ($(TARGET_ARCH),arm)
+ifneq ($(filter arm arm64,$(TARGET_ARCH)),)
 
 ########################
 # Feature file for clients to look up widevine drm plug-in
@@ -16,6 +16,7 @@ LOCAL_MODULE_CLASS := ETC
 #
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
 
+LOCAL_32_BIT_ONLY := true
 include $(BUILD_PREBUILT)
 
 ########################
@@ -27,7 +28,7 @@ LOCAL_SRC_FILES := src/StubLib.java
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-
+LOCAL_32_BIT_ONLY := true
 include $(BUILD_JAVA_LIBRARY)
 
 # invoke Android.mk files in subdirs
