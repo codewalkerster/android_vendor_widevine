@@ -15,4 +15,6 @@ PRODUCT_COPY_FILES += vendor/widevine/lib/arm/libwvdrmengine.so:system/vendor/li
                      vendor/widevine/framework/arm/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml
 
 # if not set,default to 10M
-PRODUCT_PROPERTY_OVERRIDES += ro.com.widevine.cachesize=16777216
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.widevine.cachesize=16777216 \
+    drm.service.enabled=true
