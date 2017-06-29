@@ -4,16 +4,10 @@ CUR_PATH := vendor/widevine
 ########################################################
 #add drm function
 #######################################################
-ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3399)
-PRODUCT_COPY_FILES += vendor/widevine/lib/arm/rk3399/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
-                     vendor/widevine/lib/arm/rk3399/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
-                     vendor/widevine/lib/arm/rk3399/libwvm.so:system/vendor/lib/libwvm.so
-endif
-ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3328)
-PRODUCT_COPY_FILES += vendor/widevine/lib/arm/rk3328/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
-                     vendor/widevine/lib/arm/rk3328/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
-                     vendor/widevine/lib/arm/rk3328/libwvm.so:system/vendor/lib/libwvm.so
-endif
+PRODUCT_COPY_FILES += vendor/widevine/lib/arm/classical/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
+                      vendor/widevine/lib/arm/classical/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
+                      vendor/widevine/lib/arm/classical/libwvm.so:system/vendor/lib/libwvm.so
+
 PRODUCT_COPY_FILES += vendor/widevine/lib/arm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
                      vendor/widevine/lib/arm/libwvdrm_L3.so:system/vendor/lib/libwvdrm_L3.so \
                      vendor/widevine/lib/arm/libWVStreamControlAPI_L3.so:system/vendor/lib/libWVStreamControlAPI_L3.so \
