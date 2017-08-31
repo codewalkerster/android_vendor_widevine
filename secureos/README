@@ -1,4 +1,0 @@
-1.This lib need build opentz first
-2.Copy opentz to (Top)/external
-3.build opentz
-4.build this lib
