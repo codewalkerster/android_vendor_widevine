@@ -7,11 +7,11 @@ PRODUCT_COPY_FILES += \
     vendor/widevine/lib/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwvhidl.so \
     vendor/widevine/lib/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib/mediadrm/libwvdrmengine.so
 
-#ifeq ($(strip $(TARGET_ARCH)), arm64)
-#PRODUCT_COPY_FILES += \
+ifeq ($(strip $(TARGET_ARCH)), arm64)
+PRODUCT_COPY_FILES += \
     vendor/widevine/lib64/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwvhidl.so \
     vendor/widevine/lib64/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mediadrm/libwvdrmengine.so
-#endif
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
