@@ -27,7 +27,7 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_SUFFIX := .ta
 ifeq ($(TARGET_ENABLE_TA_SIGN), true)
 $(info $(shell mkdir $(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/signed))
-$(info $(shell $(ANDROID_BUILD_TOP)/vendor/amlogic/tdk/ta_export/scripts/sign_ta_auto.py \
+$(info $(shell $(ANDROID_BUILD_TOP)/$(BOARD_AML_VENDOR_PATH)/tdk/ta_export/scripts/sign_ta_auto.py \
 		--in=$(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX) \
 		--out=$(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/signed/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)))
 LOCAL_SRC_FILES := signed/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
