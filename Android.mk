@@ -1,7 +1,7 @@
 # widevine prebuilts only available for ARM
 ifneq ($(filter arm arm64,$(TARGET_ARCH)),)
 
-ifeq (,$(wildcard $(BOARD_WIDEVINE_PATH)/widevine))
+ifeq (,$(wildcard $(BOARD_AML_VENDOR_PATH)/widevine))
 LOCAL_32_BIT_ONLY := true
 include $(call all-subdir-makefiles)
 endif
