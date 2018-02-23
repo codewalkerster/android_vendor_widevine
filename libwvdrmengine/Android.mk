@@ -50,11 +50,15 @@ LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/lib/teetz
 LOCAL_MODULE_SUFFIX := .ta
 ifeq ($(TARGET_ENABLE_TA_SIGN), true)
-$(info $(shell mkdir $(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/signed))
+$(info $(shell mkdir -p $(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/signed/libwvdrmengine))
 $(info $(shell $(ANDROID_BUILD_TOP)/$(BOARD_AML_VENDOR_PATH)/tdk/ta_export/scripts/sign_ta_auto.py \
 		--in=$(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX) \
-		--out=$(ANDROID_BUILD_TOP)/$(LOCAL_PATH)/signed/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)))
-LOCAL_SRC_FILES := signed/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+		--out=$(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/signed/libwvdrmengine/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)))
+ifeq (,$(wildcard vendor/amlogic/ampere))
+LOCAL_SRC_FILES := ../../../$(PRODUCT_OUT)/signed/libwvdrmengine/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+else
+LOCAL_SRC_FILES := ../../../../../$(PRODUCT_OUT)/signed/libwvdrmengine/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+endif
 else
 LOCAL_SRC_FILES := $(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 endif
