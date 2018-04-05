@@ -12,6 +12,7 @@ LOCAL_MODULE := android.hardware.drm@1.0-service.widevine
 LOCAL_INIT_RC := android.hardware.drm@1.0-service.widevine.rc
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/bin/hw
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
