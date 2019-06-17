@@ -15,3 +15,4 @@ service vendor.drm-widevine-hal-1-1 /vendor/bin/hw/android.hardware.drm@1.1-serv
     group media mediadrm drmrpc
     ioprio rt 4
     writepid /dev/cpuset/foreground/tasks
+    capabilities SYS_NICE
