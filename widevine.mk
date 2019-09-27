@@ -3,7 +3,7 @@
 #######################################################
 PRODUCT_COPY_FILES += \
     vendor/widevine/bin/move_widevine_data.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/move_widevine_data.sh	\
-    vendor/widevine/bin/hw/$(TARGET_ARCH)/android.hardware.drm@1.2-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.2-service.widevine \
+    vendor/widevine/bin/hw/android.hardware.drm@1.2-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.2-service.widevine \
     vendor/widevine/etc/init/android.hardware.drm@1.2-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.2-service.widevine.rc \
     vendor/widevine/lib/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwvhidl.so \
     vendor/widevine/lib/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib/mediadrm/libwvdrmengine.so
