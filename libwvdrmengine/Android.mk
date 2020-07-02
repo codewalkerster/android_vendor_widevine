@@ -9,7 +9,7 @@ ifneq ($(filter arm arm64, $(TARGET_ARCH)),)
 include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := android.hardware.drm@1.1-service.widevine
-LOCAL_INIT_RC := android.hardware.drm@1.1-service.widevine.rc
+#LOCAL_INIT_RC := android.hardware.drm@1.1-service.widevine.rc
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/bin/hw
 LOCAL_PROPRIETARY_MODULE := true
