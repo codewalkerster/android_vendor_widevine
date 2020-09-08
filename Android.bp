@@ -1,6 +1,7 @@
 cc_prebuilt_binary {
     name: "android.hardware.drm@1.3-service.widevine",
     relative_install_path: "hw",
+    compile_multilib: "32",
     shared_libs: [
         "libwvhidl",
         "libwvdrmengine",
@@ -18,6 +19,7 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "android.hardware.drm@1.3-service-lazy.widevine",
     relative_install_path: "hw",
+    compile_multilib: "32",
     shared_libs: [
         "libwvhidl",
         "libwvdrmengine",
